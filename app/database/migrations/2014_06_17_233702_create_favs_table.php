@@ -16,7 +16,7 @@ class CreateFavsTable extends Migration {
         {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('repo_name');
+            $table->integer('repo_id')->unsigned();
             $table->integer('score')->nullable()->unsigned();
         });
 	}
