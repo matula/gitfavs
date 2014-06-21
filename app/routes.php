@@ -71,18 +71,11 @@ Route::get('list/{username}', function ($username) {
         throw new \Exception('No repos found', 404);
     }
 
-    echo '<h1>' . $results[0]->username . '</h1>';
-    echo '<table border="1">';
-    echo '<tr><th>Score</th><th>Stars</th><th>Language</th><th>Repo</th></tr>';
-    foreach ($results as $result) {
-        echo '<tr>';
-        echo '<td>' . $result->score . '</td>';
-        echo '<td>' . $result->stars . '</td>';
-        echo '<td>' . $result->language . '</td>';
-        echo '<td><a href="http://github.com/' . $result->name .'" target="_blank">' . $result->name . '</a></td>';
-        echo '</tr>';
-    }
-    echo '</table>';
+    return View::make('list')->withResults($results);
+
+
+
+
 
 });
 
