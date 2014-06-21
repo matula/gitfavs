@@ -21,21 +21,8 @@
 
     <!-- Generic Icon -->
     <link rel="shortcut icon" href="/images/touch/touch-icon-57x57.png">
-
-    <!-- SEO: If mobile URL is different from desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/">
-    -->
-
     <!-- Chrome Add to Homescreen -->
     <link rel="shortcut icon" sizes="196x196" href="/images/touch/touch-icon-196x196.png">
-
-    <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
-    <!--
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="">
-    -->
 
     <!-- build:css styles/components/main.min.css -->
     <link rel="stylesheet" href="/styles/h5bp.css">
@@ -56,8 +43,12 @@
 
 <nav class="navdrawer-container promote-layer">
     <h4>Navigation</h4>
-    <ul>
-        <li><a href="/">Home</a></li>
+    <ul style="height: 52px; padding: 6px;">
+        <li>
+            <form action="/" method="get">
+                <input type="text" name="username" placeholder="Github Username" style="color:#666"> <input type="submit" style="background-color: #aaa">
+            </form>
+        </li>
     </ul>
 </nav>
 
