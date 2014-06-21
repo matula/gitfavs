@@ -55,6 +55,9 @@ Route::get('/', function () {
 Route::get('list/{username}', function ($username) {
 
     $user = User::where('username', $username)->firstOrFail();
+    if(!$user) {
+        throw new Exception('No user found');
+    }
     $user_id = $user->id;
     $sql     = "SELECT f.score, r.name, r.stars, u.username, r.language
             FROM favs f
@@ -63,6 +66,11 @@ Route::get('list/{username}', function ($username) {
             ORDER BY f.score DESC, r.stars DESC";
 
     $results = DB::select($sql);
+
+    if(!$results) {
+        throw new \Exception('No repos found', 404);
+    }
+
     echo '<h1>' . $results[0]->username . '</h1>';
     echo '<table border="1">';
     echo '<tr><th>Score</th><th>Stars</th><th>Language</th><th>Repo</th></tr>';

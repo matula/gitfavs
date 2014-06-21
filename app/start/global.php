@@ -51,6 +51,11 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+App::error(function(RuntimeException $exception)
+{
+    return 'Github API limit reached';
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler
